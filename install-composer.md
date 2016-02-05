@@ -1,19 +1,19 @@
 ## Install Composer
 
-1. [Start a shell environment](enter-pase-environment.md)  
-2. Navigate to installation destination  
-    ```bash
-    $ cd /usr/local/zendsvr6/bin
-    ```  
-3. Run installation script  
-    ```bash
-    $ php-cli -r “readfile('https://getcomposer.org/installer');” | php-cli
-    ```  
+* [Enter PASE environment](enter-pase-environment.md)  
+* Navigate to installation destination  
+```sh
+$ cd /usr/local/zendsvr6/bin
+```  
+* Run installation script  
+```sh
+$ php-cli -r “readfile('https://getcomposer.org/installer');” | php-cli
+```  
     Note: If running this statement produces an OpenSSL error message, follow [these instructions](setting-up-ssl-peer-certificates.md)  
-4. For convenience rename composer.phar to composer (optional)  
-    ```bash
-    $ mv /usr/local/zendsvr6/bin/composer.phar /usr/local/zendsvr6/bin/composer
-    ```  
+* For convenience rename composer.phar to composer (optional)  
+```sh
+$ mv /usr/local/zendsvr6/bin/composer.phar /usr/local/zendsvr6/bin/composer
+```  
     
     
 Composer Installation

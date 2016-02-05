@@ -42,16 +42,6 @@ https://www.phptesting.org/wiki/Adding-PHPCI-Support-to-Your-Projects
 	
 
 
-Remove PHPCI
-Enter PASE via QP2TERM or ssh
-CALL QP2TERM
-ssh sbcint.sk.bluecross.ca
-Delete the /www/phpci directory
-rm -r /www/phpci
-Delete the phpci database in ZendDBi
-Delete the phpci user profile in ZendDBi
-Remove the Apache virtual host from configuration
-
 
 
 
@@ -65,27 +55,6 @@ Setting up connection from GitHub to IBM i
 If you would like for your builds to be triggered automatically when pull requests are created on GitHub then you’ll need to grant GitHub’s ip addresses access to PHPCI running on your server. The IP address range that GitHub uses (and thus the ones you’ll want to whitelist) are 192.30.252.0/22 (source: https://help.github.com/articles/what-ip-addresses-does-github-use-that-i-should-whitelist/). 
 
 Set up a cron job to do a git pull. If the content changes, that would trigger Phing to carry out whatever deployment tasks.
-Installing and Configuring Zs-client (for deployment)
-Add Web API key for deployment
-Zend Server web admin -> Administration -> Web API
-Click “Add Key” button
-Key Name: deployment
-Key Owner: developer
-If wget isn’t available on IBM i
-On local PC:
-Download the phar from https://github.com/zend-patterns/ZendServerSDK/raw/master/bin/zs-client.phar
-Transfer zs-client.phar to IBM i
-cd /path/to/downloads
-ftp [server ip]
-cd /usr/local/zendsvr6/bin
-put zs-client.phar
-ssh to IBM i
-ssh user@sbcint.sk.bluecross.ca
-Navigate to Zend Server 6 binaries directory
-cd /usr/local/zendsvr6/bin
-Add target
-php-cli zs-client addTarget --target="sbcint-zend-server" --zskey="deployment" --zssecret="db60aa680ad2fd36a200c2436216ee8f864808830c4cfa3cd62fb18362ac0e79" --zsurl="http://127.0.0.1:10081"
-Problem: This doesn’t create /home/user/.zsapi.ini, seems to work if you manually create /home/user/.zsapi.ini first.
 
 
 Enabling Journaling for Transactions for Doctrine Migration Tests

@@ -1,7 +1,9 @@
+## Enter PASE Environment  
+
 Entering the PASE environment can be achieved by any of the following methods  
   
 * From local terminal  
-```bash
+```sh
 $ ssh myUserName@myServer
 ```  
 
